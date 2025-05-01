@@ -1,0 +1,88 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #000;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.parallax-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+.parallax-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    will-change: transform;
+    /* Скрываем видео по умолчанию */
+    opacity: 0;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.parallax-content h1 {
+    font-size: clamp(30px, 6vw, 60px);
+    font-weight: bold;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.bar {
+    display: inline-block;
+    vertical-align: middle;
+    width: 220px;
+    height: 36px;
+    margin: 0 10px 8px 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    background: none;
+}
+
+.bar::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 2;
+    background: #000;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.bar video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+}
